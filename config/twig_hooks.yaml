@@ -1,0 +1,11 @@
+# Admin blocks of the plugin, prepended to the Sylius admin hooks by the bundle extension.
+sylius_twig_hooks:
+    hooks:
+        'sylius_admin.taxon.create.content.sections.form.general':
+            google_product_category:
+                template: '@AltmenorgSyliusGoogleShoppingPlugin/admin/taxon/form/general/google_product_category.html.twig'
+                priority: -100
+        'sylius_admin.taxon.update.content.sections.form.general':
+            google_product_category:
+                template: '@AltmenorgSyliusGoogleShoppingPlugin/admin/taxon/form/general/google_product_category.html.twig'
+                priority: -100

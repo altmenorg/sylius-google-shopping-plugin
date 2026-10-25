@@ -1,0 +1,5 @@
+altmenorg_sylius_google_shopping:
+    form:
+        taxon:
+            google_product_category: Catégorie Google
+            google_product_category_help: 'Numéro ou chemin complet de la taxonomie Google des produits (ex. : 2073). Un produit dont la catégorie principale n''en a pas prend celle du parent le plus proche.'

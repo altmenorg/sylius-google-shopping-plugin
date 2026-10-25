@@ -1,0 +1,5 @@
+altmenorg_sylius_google_shopping:
+    form:
+        taxon:
+            google_product_category: Google product category
+            google_product_category_help: 'Id or full path of the Google product taxonomy (e.g. 2073). Products whose main taxon has none take the category of the nearest parent.'
