@@ -6,13 +6,15 @@ product category on each taxon.
 
 ```bash
 php bin/console altmenorg:google-shopping:generate
-# public/google-shopping.xml: 2843 items (1035 products), 3618822 bytes, 0.4 s.
+# /srv/shop/public/google-shopping.xml: 2844 items (1033 products), 6158553 bytes, 0.2 s.
 ```
 
 Built for Sylius 2 (tested on Sylius 2.3, Symfony 7.4, PHP 8.3, MariaDB). MIT licence.
 
 - **Fast and read-only.** The catalogue is read with a handful of SQL queries (no entity hydration): thousands
-  of variants in well under a second. Nothing is written to the database, no network call is made.
+  of variants in well under a second. The default shipping costs go through the Sylius calculators, one
+  in-memory order per variant (about 4 ms each: 11 s for 2,850 variants on our shop); a shop that can price
+  from its own tables replaces that service and stays under a second. Nothing is written to the database, no network call is made.
 - **Atomic.** The file is written next to its target and renamed: Merchant Center never fetches a half-written
   feed. Run it from cron as often as you like.
 - **Stable output.** Same data, same bytes: a feed can be compared with the previous one.
